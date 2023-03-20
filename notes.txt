@@ -1,0 +1,15 @@
+
+page to load the
+
+async () => await page.loadAsync
+
+await element to load
+
+// locators
+
+page.locator('css').click()
+
+page.getByRole()
+page.getByPlaceholder
+page.getByText()
+page.getByTestID()
