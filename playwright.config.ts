@@ -39,12 +39,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-
-    channel: "msedge",
-
-    //screenshot: {fullPage: true},
-
-    //video: true,
+    //channel: "msedge",
+    screenshot: "on",
+    video: "on",
   },
 
   /* Configure projects for major browsers */
@@ -62,6 +59,11 @@ export default defineConfig({
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
+    },
+
+    {
+      name: "msedge",
+      use: { ...devices["Desktop msedge"] },
     },
 
     /* Test against mobile viewports. */
