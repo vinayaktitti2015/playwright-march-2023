@@ -13,3 +13,11 @@ page.getByRole()
 page.getByPlaceholder
 page.getByText()
 page.getByTestID()
+
+
+// env modules - dotenv 
+// as-a secret credentials
+
+// test data
+1. user-defined data
+2. pre-defined data from faker api
