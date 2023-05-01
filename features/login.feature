@@ -7,7 +7,7 @@ Feature: Login feature
     #     Given I open browser
 
     Background: pre-cond/open browser
-        Given I go to "https://the-internet.herokuapp.com/login"
+        Given I open the website
     #When I login as a user
 
     @login

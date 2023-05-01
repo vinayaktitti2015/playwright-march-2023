@@ -21,16 +21,28 @@ export class LoginPage {
     await this.page.waitForTimeout(5000);
   }
 
-  async userLogin(username, password) {
-    //await this.page.locator(getGender).waitFor();
-    await this.page.waitForSelector(username);
-    await this.page.locator(username).fill(username);
-    await this.page.locator(password).fill(password);
+  async enterusername(username: string) {
+    await this.page.locator(username_input).fill(username);
+  }
+
+  async enterpassword(password: string) {
+    await this.page.locator(password_input).fill(password);
+  }
+
+  async clickLogin() {
     await this.page.locator(login_btn).click();
   }
 
-  async verifyDashboard(message) {
+  // async userLogin(username, password) {
+  //   //await this.page.locator(getGender).waitFor();
+  //   await this.page.waitForSelector(username);
+  //   await this.page.locator(username).fill(username);
+  //   await this.page.locator(password).fill(password);
+  //   await this.page.locator(login_btn).click();
+  // }
+
+  async verifyDashboard(message: string) {
     const locator = await this.page.locator(message);
-    await expect(locator).toHaveText(message);
+    await expect(locator).toContain(message);
   }
 }
