@@ -1,5 +1,5 @@
 # install devDependencies
-run cmmd: npm install
+Open terminal & run cmmd: npm install
 
 # Running all tests
 npx playwright test
