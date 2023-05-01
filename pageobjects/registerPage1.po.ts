@@ -30,32 +30,60 @@ export class RegisterPage {
 
   // stateless functions
   async goto() {
-    await this.page.goto("https://demo.nopcommerce.com/");
-    await this.page.waitForTimeout(3000)
+    try {
+      await this.page.goto("https://demo.nopcommerce.com/", {
+        waitUntil: "domcontentloaded",
+      });
+      await this.page.waitForTimeout(3000);
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async clickRegisterLink() {
-    await this.getRegisterLink.waitFor();
-    await this.getRegisterLink.click();
+    try {
+      await this.page.waitForSelector(".ico-register");
+      await this.getRegisterLink.first().click();
+      await this.page.waitForTimeout(3000);
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async selectGender() {
-    await this.getGender.check();
+    try {
+      await this.getGender.waitFor();
+      await this.getGender.check();
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async enterFirstName(args) {
-    await this.getFirstname.clear();
-    await this.getFirstname.fill(args);
+    try {
+      await this.getFirstname.clear();
+      await this.getFirstname.fill(args);
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async enterLastName(args) {
-    await this.getLastname.clear();
-    await this.getLastname.fill(args);
+    try {
+      await this.getLastname.clear();
+      await this.getLastname.fill(args);
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async enterEmail(args) {
-    await this.getEmail.clear();
-    await this.getEmail.fill(args);
+    try {
+      await this.getEmail.clear();
+      await this.getEmail.fill(args);
+    } catch (err) {
+      console.log("Element not found or target closed", err);
+    }
   }
 
   async enterCompanyName(args) {

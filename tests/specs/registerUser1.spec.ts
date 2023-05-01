@@ -11,15 +11,15 @@ test.describe("register feature", () => {
     const password = faker.internet.password();
 
     const registerPage = new RegisterPage(page);
-    registerPage.clickRegisterLink();
-    registerPage.selectGender();
-    registerPage.enterFirstName(faker.name.firstName());
-    registerPage.enterLastName(faker.name.lastName());
-    registerPage.enterEmail(faker.internet.email());
-    registerPage.enterCompanyName(faker.company.name());
-    registerPage.selectNewsletter();
-    registerPage.enterPassword(password);
-    registerPage.enterPasswordConfirmation(password);
-    registerPage.clickRegisterButton();
+    await registerPage.clickRegisterLink();
+    await registerPage.selectGender();
+    await registerPage.enterFirstName(faker.name.firstName());
+    await registerPage.enterLastName(faker.name.lastName());
+    await registerPage.enterEmail(faker.internet.email());
+    await registerPage.enterCompanyName(faker.company.name());
+    await registerPage.selectNewsletter();
+    await registerPage.enterPassword(password);
+    await registerPage.enterPasswordConfirmation(password);
+    await registerPage.clickRegisterButton();
   });
 });
